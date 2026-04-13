@@ -6,23 +6,23 @@ The goal was to build a high-performance Java server capable of managing billion
 
 *Technical Core*
 
-Custom Binary Protocol: Implemented using DataInputStream and DataOutputStream over raw TCP sockets (no high-level serialization libraries).
+1. Custom Binary Protocol: Implemented using DataInputStream and DataOutputStream over raw TCP sockets (no high-level serialization libraries).
 
-Concurrency & Performance: Optimized for low contention using Java threads, ensuring that slow requests from a client don't block other concurrent requests from the same user.
+2. Concurrency & Performance: Optimized for low contention using Java threads, ensuring that slow requests from a client don't block other concurrent requests from the same user.
 
-Intelligent Storage: * Lazy Aggregation: Calculations are performed on-demand and cached for future use.
+3. Intelligent Storage: * Lazy Aggregation: Calculations are performed on-demand and cached for future use.
 
-Memory Management: Implements a strict memory limit ($S < D$), swapping data between RAM and disk to handle datasets larger than the available memory.
+4. Memory Management: Implements a strict memory limit ($S < D$), swapping data between RAM and disk to handle datasets larger than the available memory.
 
-Advanced Synchronization: Features blocking operations for specific event patterns (e.g., waiting for two specific products to be sold simultaneously).
+5. Advanced Synchronization: Features blocking operations for specific event patterns (e.g., waiting for two specific products to be sold simultaneously).
 
 *Project Components*
 
-Server: The multithreaded core managing persistence, authentication, and concurrency.
+1. Server: The multithreaded core managing persistence, authentication, and concurrency.
 
-Client Library: A reusable Java API for interacting with the service.
+2. Client Library: A reusable Java API for interacting with the service.
 
-UI/Test Suite: A client interface for performance benchmarking and robustness testing.
+3. UI/Test Suite: A client interface for performance benchmarking and robustness testing.
 
 
 Final Grade: 15/20
